@@ -1,73 +1,77 @@
-Readme · MDRanjith Kumar S — Portfolio
+# Ranjith Kumar S — Portfolio (Next.js)
 
-Personal portfolio website of Ranjith Kumar S — Salesforce Developer, Python Engineer, and AI/ML Engineer.
+## 🖥️ Run on localhost
 
-Live site: add your live URL here once deployed
+You need [Node.js](https://nodejs.org) installed (v18+). Then:
 
-Show Image
-Show Image
-Show Image
-
-
-✨ Features
-
-
-Dark theme with blue/purple gradient accents and glassmorphism cards
-Animated hero section with a typing effect cycling through roles
-Skills, Experience timeline, Projects, Research & Publications, Certifications
-Fully responsive — mobile, tablet, desktop
-SEO metadata (Open Graph, Twitter cards) and accessible markup
-Zero external UI libraries — built with plain React + CSS-in-JS for full control over the design
-
-
-🛠️ Tech Stack
-
-
-Next.js 14 — App Router
-React 18
-Vanilla CSS-in-JS (no Tailwind/UI kit dependency)
-
-
-
-🚀 Getting started
-
-Prerequisites
-
-
-Node.js v18 or later
-npm (comes with Node.js)
-
-
-Installation
-
-bashgit clone https://github.com/RANJITHKUMAR6/my-portfolio-1.git
-cd my-portfolio-1
+```bash
+cd portfolio-next
 npm install
 npm run dev
+```
 
-Open http://localhost:3000 — the site hot-reloads as you edit.
+Open **http://localhost:3000** in your browser. That's it — hot reload works, so any edits to `app/PortfolioBody.jsx` show up instantly.
 
-Build for production
+---
 
-bashnpm run build
-npm run start
+## ✏️ Edit your details
 
+Open `app/PortfolioBody.jsx` and edit the `ME` block near the top:
 
-✏️ Editing content
-
-All personal details (email, links, resume URL, etc.) live in one place — the ME object near the top of app/PortfolioBody.jsx:
-
-jsconst ME = {
+```js
+const ME = {
   name:       "Ranjith Kumar S",
   email:      "your.email@gmail.com",
   phone:      null,
   location:   "Bhavani, Tamil Nadu, India",
-  github:     "https://github.com/RANJITHKUMAR6",
+  github:     "https://github.com/YOUR-USERNAME",
   linkedin:   "https://www.linkedin.com/in/ranjith-kumar-s-019a29291",
   resumeUrl:  "#",
   chatbotUrl: "#",
   ieeeUrl:    "#",
   faceRecogGithub: "#",
 };
+```
 
-Skills, experience, projects, and certifications are each defined as arrays near the top of the same file — add or edit entries there.
+---
+
+## 🚀 Deploy for free
+
+### Option A — Vercel (built by the Next.js team, easiest)
+```bash
+npm install -g vercel
+vercel
+```
+Follow the prompts — you'll get a live URL in under a minute.
+
+### Option B — Netlify
+Push this folder to a GitHub repo, then connect it at netlify.com → New site from Git.
+
+### Option C — GitHub Pages (needs static export)
+GitHub Pages doesn't run Node servers, so you'd need `next export` — Vercel is the natural home for Next.js apps and is just as free.
+
+---
+
+## 📁 Project structure
+
+```
+portfolio-next/
+├── app/
+│   ├── layout.jsx        ← SEO metadata, fonts
+│   ├── page.jsx           ← entry point
+│   ├── PortfolioBody.jsx  ← all your content & sections (edit ME block here)
+│   └── globals.css        ← base styles
+├── next.config.js
+└── package.json
+```
+
+---
+
+## 📝 Adding your resume PDF
+
+1. Drop your resume PDF into the `public/` folder as `resume.pdf`
+2. In `PortfolioBody.jsx`, change `resumeUrl: "#"` to `resumeUrl: "/resume.pdf"`
+
+---
+
+Made with ❤️ by Ranjith Kumar S
